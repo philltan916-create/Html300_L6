@@ -1,67 +1,47 @@
 <template>
+  <nav class="navbar">
+    <div class="navbar-container">
 
-    <nav class="navbar">
+      <NuxtLink to="/" class="navbar-brand">
+        Vue Demo
+      </NuxtLink>
 
-        <div class="navbar-container">
+      <ul class="navbar-links">
 
-           
-            <RouterLink
-                to="/"
-                class="navbar-brand"
-            >
-                Vue Demo
-            </RouterLink>
+        <li
+          v-for="link in navLinks"
+          :key="link.name"
+        >
+          <NuxtLink
+            :to="link.path"
+            class="nav-link"
+          >
+            {{ link.name }}
+          </NuxtLink>
+        </li>
 
-
-            <ul class="navbar-links">
-
-                <li
-                    v-for="link in navLinks"
-                    :key="link.name"
-                >
-
-                    <RouterLink
-                        :to="link.path"
-                        class="nav-link"
-                    >
-                        {{ link.name }}
-                    </RouterLink>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </nav>
-
+      </ul>
+    </div>
+  </nav>
 </template>
 
-
 <script setup>
-
 const navLinks = [
-
-    {
-        name: "Home",
-        path: "/"
-    },
-
-    {
-        name: "Images",
-        path: "/images"
-    },
-
-    {
-        name: "Accordion",
-        path: "/accordion"
-    },
-
-    {
-        name: "Grid",
-        path: "/grid"
-    }
-
+  {
+    name: "Home",
+    path: "/"
+  },
+  {
+    name: "Images",
+    path: "/images"
+  },
+  {
+    name: "Accordion",
+    path: "/accordion"
+  },
+  {
+    name: "Grid",
+    path: "/grid"
+  }
 ];
-
 </script>

@@ -1,19 +1,14 @@
 <template>
+  <header class="page-header">
 
-    <header class="page-header">
+    <h1>
+      <slot>
+        Default Page Title
+      </slot>
+    </h1>
 
-        <h1>
-
-            <slot>
-                Default Page Title
-            </slot>
-
-        </h1>
-
-    </header>
-
+  </header>
 </template>
-
 
 <script setup>
 
